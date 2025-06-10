@@ -16,6 +16,7 @@ export default function Products() {
     setProducts(mockProducts);
   }, []);
 
+
   return (
     <section className="products-section">
       <h2>Products</h2>
@@ -30,5 +31,6 @@ export default function Products() {
         ))}
       </div>
     </section>
+    
   );
 }
