@@ -7,6 +7,7 @@ import "swiper/css/pagination";
 import "swiper/css/navigation";
 
 
+
 export default function Landing() {
   return (
     <>
@@ -53,14 +54,17 @@ export default function Landing() {
       <NewArrivals />
 
       <section className="about-section">
-        <h2>About Us</h2>
-        <p>
-          At ShopifyX, we are passionate about bringing you top-quality products 
-          at affordable prices. Our mission is to provide exceptional customer 
-          service and a seamless shopping experience. Whether you're looking for 
-          everyday essentials or unique finds, we've got you covered.
-        </p>
-      </section>
+  <h2>About Us</h2>
+  <p>
+    At ShopifyX, we are passionate about bringing you top-quality products 
+    at affordable prices. Our mission is to provide exceptional customer 
+    service and a seamless shopping experience. Whether you're looking for 
+    everyday essentials or unique finds, we've got you covered.
+  </p>
+</section>
+
+
+
     </>
   );
 }
