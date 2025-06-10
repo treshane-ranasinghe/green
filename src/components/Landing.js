@@ -30,7 +30,7 @@ export default function Landing() {
             </div>
           </SwiperSlide>
           <SwiperSlide>
-            <div className="slide" style={{ backgroundImage: "url('/assets/slide2.jpg')" }}>
+            <div className="slide" style={{ backgroundImage: "url('/assets/slide02.jpg')" }}>
               <div className="hero-content">
                 <h1>New Arrivals Just Dropped</h1>
                 <p>Stay ahead with the latest trends.</p>
@@ -39,7 +39,7 @@ export default function Landing() {
             </div>
           </SwiperSlide>
           <SwiperSlide>
-            <div className="slide" style={{ backgroundImage: "url('/assets/slide3.jpg')" }}>
+            <div className="slide" style={{ backgroundImage: "url('/assets/slide03.jpg')" }}>
               <div className="hero-content">
                 <h1>Deals You Can't Miss</h1>
                 <p>Get the best value for your money.</p>
