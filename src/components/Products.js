@@ -8,13 +8,14 @@ export default function Products() {
   useEffect(() => {
     // Mock product data - replace with your API call
     const mockProducts = [
-      { id: 1, name: "Stylish Sneakers", price: 59.99, image: "https://via.placeholder.com/250x180?text=Sneakers" },
-      { id: 2, name: "Leather Jacket", price: 129.99, image: "https://via.placeholder.com/250x180?text=Jacket" },
-      { id: 3, name: "Smart Watch", price: 199.99, image: "https://via.placeholder.com/250x180?text=Watch" },
-      { id: 4, name: "Sunglasses", price: 79.99, image: "https://via.placeholder.com/250x180?text=Sunglasses" },
+      { id: 1, name: "Ecofriendly Stylish Pot 4-Inch", price: 59.99, image: "https://via.placeholder.com/250x180?text=Sneakers" },
+      { id: 2, name: "Sansevieria bacularis plant Sapling", price: 129.99, image: "https://via.placeholder.com/250x180?text=Jacket" },
+      { id: 3, name: "Snake Plant Sapling", price: 199.99, image: "https://via.placeholder.com/250x180?text=Watch" },
+      
     ];
     setProducts(mockProducts);
   }, []);
+
 
   return (
     <section className="products-section">
@@ -30,5 +31,7 @@ export default function Products() {
         ))}
       </div>
     </section>
+    
+    
   );
 }

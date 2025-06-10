@@ -3,19 +3,19 @@ import React from "react";
 const sampleProducts = [
   {
     id: 1,
-    name: "Stylish Sneakers",
+    name: "Alocasia Pink dragon plant sapling",
     price: 79.99,
     image: "https://via.placeholder.com/250x180?text=Sneakers",
   },
   {
     id: 2,
-    name: "Elegant Watch",
+    name: "Syngonium Red Vein Plant Sapling",
     price: 199.99,
     image: "https://via.placeholder.com/250x180?text=Watch",
   },
   {
     id: 3,
-    name: "Leather Backpack",
+    name: "Ecofriendly Stylish Pot 4-Inch",
     price: 129.99,
     image: "https://via.placeholder.com/250x180?text=Backpack",
   },
