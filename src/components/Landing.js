@@ -22,7 +22,9 @@ export default function Landing() {
           <SwiperSlide>
             <div
               className="slide"
-              style={{ backgroundImage: "url('./assets/slide01.jpg')" }}
+              style={{
+                backgroundImage: `url(${process.env.PUBLIC_URL}/assets/slide01.jpg)`
+              }}
             >
               <div className="hero-content">
                 <h1>Welcome to ShopifyX</h1>
@@ -36,7 +38,9 @@ export default function Landing() {
           <SwiperSlide>
             <div
               className="slide"
-              style={{ backgroundImage: "url('./assets/slide02.jpg')" }}
+              style={{
+                backgroundImage: `url(${process.env.PUBLIC_URL}/assets/slide02.jpg)`
+              }}
             >
               <div className="hero-content">
                 <h1>New Arrivals Just Dropped</h1>
@@ -50,7 +54,9 @@ export default function Landing() {
           <SwiperSlide>
             <div
               className="slide"
-              style={{ backgroundImage: "url('/assets/slide03.jpg')" }}
+              style={{
+                backgroundImage: `url(${process.env.PUBLIC_URL}/assets/slide03.jpg)`
+              }}
             >
               <div className="hero-content">
                 <h1>Deals You Can't Miss</h1>
@@ -67,7 +73,6 @@ export default function Landing() {
       <NewArrivals />
 
       <section className="about-section">
-        {/* Darker background image div */}
         <div
           className="about-bg-image"
           style={{
@@ -76,15 +81,12 @@ export default function Landing() {
             left: 0,
             right: 0,
             bottom: 0,
-            backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('/assets/aboutus.jpg')`,
+            backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(${process.env.PUBLIC_URL}/assets/aboutus.jpg)`,
             backgroundSize: "cover",
             backgroundPosition: "center",
-            zIndex: 0,
-            // Removed opacity property
+            zIndex: 0
           }}
         />
-
-        {/* Content */}
         <div className="about-content-box">
           <h2>About Us</h2>
           <p>
