@@ -14,10 +14,12 @@ import "./App.css";
 function App() {
   return (
     <CartProvider>
-      <Router>
+      {/* Add basename="/green" for GitHub Pages */}
+      <Router basename="/green">
         <Header />
         <CartDrawer />
         <Routes>
+          {/* Default path loads Landing component */}
           <Route path="/" element={<Landing />} />
           <Route path="/about" element={<AboutUs />} />
           <Route path="/services" element={<Services />} />

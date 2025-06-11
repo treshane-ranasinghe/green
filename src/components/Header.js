@@ -16,7 +16,7 @@ export default function Header() {
 
       <nav className="nav-links">
         <div className="dropdown">
-          <Link to="/landing">
+          <Link to="/">
             Home 
           </Link>
         </div>
