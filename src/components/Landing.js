@@ -6,8 +6,6 @@ import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
 
-
-
 export default function Landing() {
   return (
     <>
@@ -22,29 +20,44 @@ export default function Landing() {
           className="landing-swiper"
         >
           <SwiperSlide>
-            <div className="slide" style={{ backgroundImage: "url('./assets/slide01.jpg')" }}>
+            <div
+              className="slide"
+              style={{ backgroundImage: "url('./assets/slide01.jpg')" }}
+            >
               <div className="hero-content">
                 <h1>Welcome to ShopifyX</h1>
                 <p>Explore our exclusive collection today.</p>
-                <a href="/products" className="btn-primary">Shop Now</a>
+                <a href="/products" className="btn-primary">
+                  Shop Now
+                </a>
               </div>
             </div>
           </SwiperSlide>
           <SwiperSlide>
-            <div className="slide" style={{ backgroundImage: "url('/assets/slide02.jpg')" }}>
+            <div
+              className="slide"
+              style={{ backgroundImage: "url('/assets/slide02.jpg')" }}
+            >
               <div className="hero-content">
                 <h1>New Arrivals Just Dropped</h1>
                 <p>Stay ahead with the latest trends.</p>
-                <a href="/products" className="btn-primary">View New Arrivals</a>
+                <a href="/products" className="btn-primary">
+                  View New Arrivals
+                </a>
               </div>
             </div>
           </SwiperSlide>
           <SwiperSlide>
-            <div className="slide" style={{ backgroundImage: "url('/assets/slide03.jpg')" }}>
+            <div
+              className="slide"
+              style={{ backgroundImage: "url('/assets/slide03.jpg')" }}
+            >
               <div className="hero-content">
                 <h1>Deals You Can't Miss</h1>
                 <p>Get the best value for your money.</p>
-                <a href="/products" className="btn-primary">Discover Deals</a>
+                <a href="/products" className="btn-primary">
+                  Discover Deals
+                </a>
               </div>
             </div>
           </SwiperSlide>
@@ -54,17 +67,35 @@ export default function Landing() {
       <NewArrivals />
 
       <section className="about-section">
-  <h2>About Us</h2>
-  <p>
-    At ShopifyX, we are passionate about bringing you top-quality products 
-    at affordable prices. Our mission is to provide exceptional customer 
-    service and a seamless shopping experience. Whether you're looking for 
-    everyday essentials or unique finds, we've got you covered.
-  </p>
-</section>
+        {/* Darker background image div */}
+        <div
+          className="about-bg-image"
+          style={{
+            position: "absolute",
+            top: 0,
+            left: 0,
+            right: 0,
+            bottom: 0,
+            backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('/assets/aboutus.jpg')`,
+            backgroundSize: "cover",
+            backgroundPosition: "center",
+            zIndex: 0,
+            // Removed opacity property
+          }}
+        />
 
-
-
+        {/* Content */}
+        <div className="about-content-box">
+          <h2>About Us</h2>
+          <p>
+            At ShopifyX, we are passionate about bringing you top-quality
+            products at affordable prices. Our mission is to provide exceptional
+            customer service and a seamless shopping experience. Whether you're
+            looking for everyday essentials or unique finds, we've got you
+            covered.
+          </p>
+        </div>
+      </section>
     </>
   );
 }

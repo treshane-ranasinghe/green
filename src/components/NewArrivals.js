@@ -5,19 +5,19 @@ const sampleProducts = [
     id: 1,
     name: "Alocasia Pink dragon plant sapling",
     price: 79.99,
-    image: "https://via.placeholder.com/250x180?text=Sneakers",
+    image: "/assets/NA1.jpg",
   },
   {
     id: 2,
     name: "Syngonium Red Vein Plant Sapling",
     price: 199.99,
-    image: "https://via.placeholder.com/250x180?text=Watch",
+    image: "/assets/NA2.jpg",
   },
   {
     id: 3,
     name: "Ecofriendly Stylish Pot 4-Inch",
     price: 129.99,
-    image: "https://via.placeholder.com/250x180?text=Backpack",
+    image: "/assets/NA3.jpg",
   },
 ];
 

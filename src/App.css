@@ -72,29 +72,102 @@ body {
   width: 100%;
 }
 
-.about-section {
-  max-width: 900px;
-  margin: 50px auto;
-  padding: 40px 20px;
-  background: white;
-  border-radius: 10px;
-  box-shadow: 0 5px 15px rgb(0 0 0 / 0.05);
-  text-align: center;
+.nav-links {
+  display: flex;
+  gap: 20px;
 }
+
+.dropdown {
+  position: relative;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: white;
+  min-width: 160px;
+  box-shadow: 0 6px 12px rgba(0,0,0,0.1);
+  z-index: 1000;
+  flex-direction: column;
+}
+
+.dropdown-content a {
+  padding: 10px 15px;
+  display: block;
+  text-decoration: none;
+  color: #333;
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+.dropdown-content a:hover {
+  background-color: #f0f0f0;
+}
+
+.dropdown:hover .dropdown-content {
+  display: flex;
+}
+
+.dropdown a {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.dropdown-icon {
+  margin-top: 2px;
+}
+
+.about-section {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 80px 0;
+  position: relative; /* Needed for absolute positioning of bg image */
+  overflow: hidden; /* Keeps the background image contained */
+}
+
+.about-content-box {
+  width: 100%;
+  max-width: 1200px;
+  padding: 40px 20px;
+  text-align: center;
+  position: relative; /* Ensures content stays above background */
+  z-index: 1; /* Brings content above background */
+  
+  border-radius: 8px; /* Optional: adds rounded corners */
+}
+
+/* Rest of your existing styles... */
 
 .about-section h2 {
   font-weight: 700;
   font-size: 2rem;
   margin-bottom: 20px;
-  color: #228B22;
+  color: white;
+  text-align: center;
 }
 
 .about-section p {
   font-size: 1.1rem;
   line-height: 1.6;
-  color: #444;
-  max-width: 650px;
+  
+  
+  text-align: justify;
   margin: 0 auto;
+
+  color: white;
+  font-size: 1.3rem;
+  margin-bottom: 2rem;
+  font-weight: 600;
+  max-width: 1000px;
+ 
+  line-height: 1.4;
+  text-shadow: 1.5px 1.5px 5px rgba(0, 0, 0, 0.5);
 }
 
 
@@ -440,37 +513,6 @@ body {
   box-shadow: 0 6px 12px rgb(9 91 181 / 0.5);
 }
 
-/* About & Services sections */
-.about-section,
-.services-section {
-  max-width: 900px;
-  margin: 50px auto;
-  padding: 0 20px;
-  background: white;
-  border-radius: 10px;
-  box-shadow: 0 5px 15px rgb(0 0 0 / 0.05);
-  text-align: center;
-}
-
-.about-section h2,
-.services-section h2 {
-  font-weight: 700;
-  font-size: 2rem;
-  margin-bottom: 20px;
-  color: #228B22;
-  user-select: none;
-}
-
-.services-section ul {
-  list-style: none;
-  padding: 0;
-}
-
-.services-section li {
-  font-size: 1.1rem;
-  margin-bottom: 12px;
-  font-weight: 600;
-}
 
 /* Animations */
 @keyframes fadeIn {
