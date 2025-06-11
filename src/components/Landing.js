@@ -36,7 +36,7 @@ export default function Landing() {
           <SwiperSlide>
             <div
               className="slide"
-              style={{ backgroundImage: "url('/assets/slide02.jpg')" }}
+              style={{ backgroundImage: "url('./assets/slide02.jpg')" }}
             >
               <div className="hero-content">
                 <h1>New Arrivals Just Dropped</h1>
