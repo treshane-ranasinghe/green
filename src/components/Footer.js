@@ -1,4 +1,6 @@
 import React from 'react'
+import { Link } from 'react-router-dom';
+
 
 function Footer() {
   return (
@@ -7,24 +9,24 @@ function Footer() {
             <Link to="/">ShopifyX</Link>
         </div>
         <nav className='nav-Catergories'>
-            <Link to="/about">Plants</Link>
-            <Link to="/services">Seeds</Link>
-            <Link to="/products">Pots & Planter</Link>
-            <Link to="/contact">Plant Care</Link>
+            <Link to="/">Plants</Link>
+            <Link to="/">Seeds</Link>
+            <Link to="/">Pots & Planter</Link>
+            <Link to="/">Plant Care</Link>
         </nav>
         <nav className='nav-Policies'>
-            <Link to="/privacy-policy">Privacy Policy</Link>
-            <Link to="/terms-of-service">Terms of Service</Link>
-            <Link to="/return-policy">Return Policy</Link>
+            <Link to="/">Privacy Policy</Link>
+            <Link to="/">Terms of Service</Link>
+            <Link to="/">Return Policy</Link>
         </nav>
         <nav className='nav-Navigation'>
-            <Link to="/home">Home</Link>
-            <Link to="/about">About Us</Link>
-            <Link to="/contact">Contact Us</Link>
+            <Link to="/">Home</Link>
+            <Link to="/">About Us</Link>
+            <Link to="/">Contact Us</Link>
         </nav>
         <nav className='nav-Contact'>
-            <Link to="/contact">+94714295678</Link>
-            <Link to="/email">nibm@gmail.lk</Link>
+            <Link to="/">+94714295678</Link>
+            <Link to="/">nibm@gmail.lk</Link>
             <p>Colombo</p>
         </nav>
 

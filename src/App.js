@@ -8,6 +8,7 @@ import AboutUs from "./components/AboutUs";
 import Services from "./components/Services";
 import Products from "./components/Products";
 import CartDrawer from "./components/CartDrawer";
+import Footer from "./components/Footer"; // Import Footer component
 
 import "./App.css";
 
