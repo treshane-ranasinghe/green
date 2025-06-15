@@ -6,7 +6,7 @@ import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
 import Footer from "./Footer"; // Import Footer component
-import Faqs from "./Faqs";
+import Faqs from "./Faqs"; // Import FAQs component
 
 export default function Landing() {
   return (
