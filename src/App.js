@@ -7,6 +7,7 @@ import Landing from "./components/Landing";
 import AboutUs from "./components/AboutUs";
 import Services from "./components/Services";
 import Products from "./components/Products";
+import Login from "./components/Login";
 import CartDrawer from "./components/CartDrawer";
 import Footer from "./components/Footer"; // Import Footer component
 
@@ -22,6 +23,7 @@ function App() {
         <Routes>
           {/* Default path loads Landing component */}
           <Route path="/" element={<Landing />} />
+          <Route path="/login" element={<Login />} />
           <Route path="/about" element={<AboutUs />} />
           <Route path="/services" element={<Services />} />
           <Route path="/products" element={<Products />} />

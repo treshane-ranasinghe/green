@@ -12,6 +12,79 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+.auth-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: linear-gradient(135deg, #e6ffe6, #ccffcc);
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.form-box {
+  background: white;
+  padding: 40px 30px;
+  border-radius: 12px;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 400px;
+  text-align: center;
+}
+
+.form-box h2 {
+  margin-bottom: 20px;
+  color: #228B22;
+  font-size: 24px;
+  font-weight: 700;
+}
+
+.form-box form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.form-box input {
+  padding: 12px 15px;
+  font-size: 16px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  outline: none;
+  transition: border-color 0.3s;
+}
+
+.form-box input:focus {
+  border-color: #228B22;
+}
+
+.form-box button {
+  background-color: #228B22;
+  color: white;
+  font-size: 16px;
+  font-weight: 600;
+  padding: 12px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.form-box button:hover {
+  background-color: #196d19;
+}
+
+.toggle {
+  margin-top: 20px;
+  font-size: 14px;
+}
+
+.toggle span {
+  color: #228B22;
+  cursor: pointer;
+  font-weight: 600;
+  margin-left: 5px;
+}
+
 /* Header */
 .header {
   background: white;
@@ -39,6 +112,62 @@ body {
 .logo a:hover {
   color: #355E3B;
 }
+
+/* Search Bar */
+
+.search-bar {
+  display: flex;
+  align-items: center;
+  border: 1px solid #ccc;
+  border-radius: 25px;
+  padding: 4px 10px;
+  background-color: #f9f9f9;
+  margin-left: auto; /* Pushes it to the right */
+  margin-right: 20px; /* Space before admin/cart */
+}
+
+
+.search-bar input {
+  border: none;
+  outline: none;
+  background: transparent;
+  padding: 6px;
+  font-size: 14px;
+  width: 140px;
+}
+
+.search-bar button {
+  background: none;
+  border: none;
+  color: #228B22;
+  cursor: pointer;
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+}
+
+/* Admin Button */
+.admin-login-btn {
+  margin-right: 12px;
+  font-size: 20px;
+  color: #228B22;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+}
+
+.admin-login-btn:hover {
+  color: #228B22;
+}
+
+.nav-links {
+  display: flex;
+  gap: 20px;
+  justify-content: flex-end;
+  align-items: center;
+  margin: 0 auto;
+}
+
 
 .nav-links a {
   color: black;
@@ -435,6 +564,80 @@ body {
 
 
 /* Products */
+
+.products-layout {
+  display: flex;
+  gap: 30px;
+  align-items: flex-start;
+}
+
+.products-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+  gap: 25px;
+  flex: 1; /* Take remaining space beside sidebar */
+}
+
+
+/* Sidebar on left */
+.filter-sidebar {
+  width: 250px;
+  background: #f8f8f8;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.filter-sidebar h3 {
+  font-size: 1.2rem;
+  margin-bottom: 15px;
+  font-weight: 700;
+}
+
+.price-inputs {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 15px;
+}
+
+.price-inputs label {
+  font-size: 0.9rem;
+  color: #555;
+  display: block;
+  margin-bottom: 4px;
+}
+
+.price-inputs input {
+  width: 80px;
+  padding: 6px 8px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  outline: none;
+  font-size: 0.95rem;
+}
+
+.price-display {
+  font-weight: 500;
+  margin-bottom: 15px;
+}
+
+.filter-button {
+  background: #111827;
+  color: white;
+  border: none;
+  padding: 8px 14px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background 0.3s ease;
+}
+
+.filter-button:hover {
+  background: #333;
+}
+
+
 .products-section {
   max-width: 1100px;
   margin: 40px auto;
@@ -450,11 +653,6 @@ body {
   user-select: none;
 }
 
-.products-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
-  gap: 25px;
-}
 
 .product-card {
   background: white;
