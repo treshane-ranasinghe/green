@@ -39,6 +39,9 @@ function Footer() {
             <Link to="/" className='fLink'>+94714295678</Link>
             <br></br>
             <Link to="/" className='fLink'>nibm@gmail.lk</Link>
+            <br></br>
+            <Link to="/" className='fLink'>nibm@gmail.lk</Link>
+            
         </div>
         </div>
             
