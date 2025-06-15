@@ -6,6 +6,7 @@ import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
 import Footer from "./Footer"; // Import Footer component
+import Faqs from "./Faqs";
 
 export default function Landing() {
   return (
@@ -99,6 +100,7 @@ export default function Landing() {
           </p>
         </div>
       </section>
+      <Faqs />
       <Footer />
     </>
   );
