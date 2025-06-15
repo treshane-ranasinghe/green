@@ -4,31 +4,44 @@ import { Link } from 'react-router-dom';
 
 function Footer() {
   return (
-    <footer className='Footer'>
-        <div className='Logo'>
+    <footer className='footer'>
+        
+        <div className='footerLinks'>
+            <div className='logo'>
             <Link to="/">ShopifyX</Link>
         </div>
-        <nav className='nav-Catergories'>
-            <Link to="/">Plants</Link>
-            <Link to="/">Seeds</Link>
-            <Link to="/">Pots & Planter</Link>
-            <Link to="/">Plant Care</Link>
-        </nav>
-        <nav className='nav-Policies'>
-            <Link to="/">Privacy Policy</Link>
-            <Link to="/">Terms of Service</Link>
-            <Link to="/">Return Policy</Link>
-        </nav>
-        <nav className='nav-Navigation'>
-            <Link to="/">Home</Link>
-            <Link to="/">About Us</Link>
-            <Link to="/">Contact Us</Link>
-        </nav>
-        <nav className='nav-Contact'>
-            <Link to="/">+94714295678</Link>
-            <Link to="/">nibm@gmail.lk</Link>
-            <p>Colombo</p>
-        </nav>
+        <div>
+            <p className='fPara'>Categories</p>
+            <Link to="/" className='fLink'>Plants</Link>
+            <br></br>
+            <Link to="/" className='fLink'>Pots & Planter</Link>
+            <br></br>
+            <Link to="/" className='fLink'>Plant Care</Link>
+        </div>
+        <div>
+            <p className='fPara'>Policies</p>
+            <Link to="/" className='fLink'>Privacy Policy</Link>
+            <br></br>
+            <Link to="/" className='fLink'>Terms of Service</Link>
+            <br></br>
+            <Link to="/" className='fLink'>Return Policy</Link>
+        </div>
+        <div>
+            <p className='fPara'>Quick links</p>
+            <Link to="/" className='fLink'>Home</Link>
+            <br></br>
+            <Link to="/" className='fLink'>About Us</Link>
+            <br></br>
+            <Link to="/" className='fLink'>Contact Us</Link>
+        </div>
+        <div>
+            <p className='fPara'>Contact us</p>
+            <Link to="/" className='fLink'>+94714295678</Link>
+            <br></br>
+            <Link to="/" className='fLink'>nibm@gmail.lk</Link>
+        </div>
+        </div>
+            
 
     </footer>
   )

@@ -65,7 +65,7 @@ body {
 }
 
 .nav-links a:hover {
-  color: #50C878;
+  color: #50c878;
 }
 
 .nav-links a:hover::after {
@@ -552,13 +552,45 @@ body {
     height: 140px;
   }
 
-  /* Footer */
-  .footer {
-    text-align: center;
-    padding: 20px;
-    background: #f8f8f8;
-    color: #555;
-    font-size: 0.9rem;
-    border-top: 1px solid #eaeaea;
-  }
 }
+
+/* Footer */
+.footer{
+  background: #f8f8f8;
+  padding: 20px;
+  font-size: 18px;
+  display:flex;
+  flex-direction: row;
+  align-items: center;
+  padding-top: 40px;
+  padding-bottom: 150px;
+  justify-content: center;
+
+}
+
+
+  .fLink{
+    text-decoration: none;
+    color: black;
+  }
+
+  .fLink:hover{
+    color: #50c878;
+    text-decoration: underline;
+  }
+
+  .footerLinks{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 35px;
+    padding-left: 50px;
+    
+  }
+
+  .fPara{
+    font-size: 20px;
+    font-weight: 100;
+  }
+
+
