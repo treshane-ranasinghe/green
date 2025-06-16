@@ -25,30 +25,7 @@ const sampleProducts = [
     price: 129.99,
     image: `${process.env.PUBLIC_URL}/assets/NA3.jpg`,
   },
-  {
-    id: 3,
-    name: "Ecofriendly Stylish Pot 4-Inch",
-    price: 129.99,
-    image: `${process.env.PUBLIC_URL}/assets/NA3.jpg`,
-  },
-  {
-    id: 3,
-    name: "Ecofriendly Stylish Pot 4-Inch",
-    price: 129.99,
-    image: `${process.env.PUBLIC_URL}/assets/NA3.jpg`,
-  },
-  {
-    id: 3,
-    name: "Ecofriendly Stylish Pot 4-Inch",
-    price: 129.99,
-    image: `${process.env.PUBLIC_URL}/assets/NA3.jpg`,
-  },
-  {
-    id: 3,
-    name: "Ecofriendly Stylish Pot 4-Inch",
-    price: 129.99,
-    image: `${process.env.PUBLIC_URL}/assets/NA3.jpg`,
-  }, 
+  
 ];
 
 export default function NewArrivals() {

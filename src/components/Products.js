@@ -14,9 +14,7 @@ export default function Products() {
       { id: 2, name: "Sansevieria bacularis plant Sapling", price: 129.99, image: `${process.env.PUBLIC_URL}/assets/NA2.jpg` },
       { id: 3, name: "Snake Plant Sapling", price: 199.99, image: `${process.env.PUBLIC_URL}/assets/NA1.jpg` },
       { id: 3, name: "Snake Plant Sapling", price: 199.99, image: `${process.env.PUBLIC_URL}/assets/NA1.jpg` },
-      { id: 3, name: "Snake Plant Sapling", price: 199.99, image: `${process.env.PUBLIC_URL}/assets/NA1.jpg` },
-      { id: 3, name: "Snake Plant Sapling", price: 199.99, image: `${process.env.PUBLIC_URL}/assets/NA1.jpg` },
-      { id: 3, name: "Snake Plant Sapling", price: 199.99, image: `${process.env.PUBLIC_URL}/assets/NA1.jpg` },
+    
     ];
     setProducts(mockProducts);
     setFiltered(mockProducts);
