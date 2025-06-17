@@ -825,7 +825,8 @@ body {
 
 /* Footer */
 .footer{
-  background: #f8f8f8;
+  background-size: cover;
+  background-repeat: no-repeat;
   padding: 20px;
   font-size: 18px;
   display:flex;
@@ -840,7 +841,7 @@ body {
 
   .fLink{
     text-decoration: none;
-    color: black;
+    color: white;
   }
 
   .fLink:hover{
@@ -860,6 +861,7 @@ body {
   .fPara{
     font-size: 20px;
     font-weight: 100;
+    color: white;
   }
 
 

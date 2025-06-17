@@ -4,7 +4,9 @@ import { Link } from 'react-router-dom';
 
 function Footer() {
   return (
-    <footer className='footer'>
+    <footer className='footer'
+        style={{
+                backgroundImage: `url(${process.env.PUBLIC_URL}/assets/fBackground.jpg)`}}>
         
         <div className='footerLinks'>
             <div className='logo'>
