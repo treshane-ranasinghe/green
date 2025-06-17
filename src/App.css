@@ -827,6 +827,7 @@ body {
 .footer{
   background-size: cover;
   background-repeat: no-repeat;
+  background-position: 50% 30%;
   padding: 20px;
   font-size: 18px;
   display:flex;
@@ -862,6 +863,23 @@ body {
     font-size: 20px;
     font-weight: 100;
     color: white;
+  }
+
+  @media (max-width: 768px) {
+    .footer {
+      flex-direction: column;
+      text-align: center;
+      padding: 20px;
+    }
+    .footerLinks {
+      flex-direction: column;
+      align-items: center;
+      gap: 15px;
+      padding-left: 0;
+    }
+    .fPara {
+      font-size: 18px;
+    }
   }
 
 
