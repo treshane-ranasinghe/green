@@ -832,7 +832,7 @@ body {
   font-size: 18px;
   display:flex;
   flex-direction: row;
-  align-items: center;
+  align-items: flex-start;
   padding-top: 40px;
   padding-bottom: 150px;
   justify-content: center;
@@ -852,17 +852,18 @@ body {
 
   .footerLinks{
     display: flex;
+    align-items: flex-start;
     flex-direction: row;
-    align-items: center;
-    gap: 35px;
+    gap: 70px;
     padding-left: 50px;
     
   }
 
   .fPara{
     font-size: 20px;
-    font-weight: 100;
+    font-weight: 150px;
     color: white;
+    align-items: flex-start;
   }
 
   @media (max-width: 768px) {
@@ -870,15 +871,19 @@ body {
       flex-direction: column;
       text-align: center;
       padding: 20px;
+      align-items: center;
     }
     .footerLinks {
       flex-direction: column;
       align-items: center;
       gap: 15px;
       padding-left: 0;
+      
     }
     .fPara {
       font-size: 18px;
+      
+    
     }
   }
 
