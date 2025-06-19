@@ -10,6 +10,7 @@ body {
   color: #222;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
 }
 
 .auth-container {
@@ -17,7 +18,7 @@ body {
   justify-content: center;
   align-items: center;
   height: 100vh;
-  background: linear-gradient(135deg, #e6ffe6, #ccffcc);
+  
   font-family: 'Segoe UI', sans-serif;
 }
 
