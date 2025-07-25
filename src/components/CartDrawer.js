@@ -1,10 +1,19 @@
 import React, { useContext } from "react";
 import { CartContext } from "../context/CartContext";
+import { useNavigate } from "react-router-dom";
+
 
 export default function CartDrawer() {
   const { cartItems, removeFromCart, isCartOpen, toggleCart } = useContext(CartContext);
 
   const totalPrice = cartItems.reduce((sum, item) => sum + item.price * item.quantity, 0);
+
+  const navigate = useNavigate();
+
+const handleCheckout = () => {
+  navigate("/checkout", { state: { total: totalPrice } });
+};
+
 
   return (
     <div className={`cart-drawer ${isCartOpen ? "open" : ""}`}>
@@ -32,7 +41,8 @@ export default function CartDrawer() {
           <div className="cart-total">
             <strong>Total:</strong> ${totalPrice.toFixed(2)}
           </div>
-          <button className="checkout-button">Checkout</button>
+          <button className="checkout-button" onClick={handleCheckout}>Checkout</button>
+
         </>
       )}
     </div>

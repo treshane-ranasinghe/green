@@ -9,6 +9,7 @@ import Services from "./components/Services";
 import Products from "./components/Products";
 import Login from "./components/Login";
 import CartDrawer from "./components/CartDrawer";
+import CheckoutPage from "./components/CheckoutPage";
 
 
 import "./App.css";
@@ -27,6 +28,7 @@ function App() {
           <Route path="/about" element={<AboutUs />} />
           <Route path="/services" element={<Services />} />
           <Route path="/products" element={<Products />} />
+          <Route path="/checkout" element={<CheckoutPage />} />
         </Routes>
       </Router>
     </CartProvider>
