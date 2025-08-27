@@ -14,7 +14,7 @@ export default function Header() {
   const navigate = useNavigate();
   const location = useLocation();
 
-  // Update searchQuery from URL
+  // Update searchQuery when navigating back/forward
   useEffect(() => {
     const params = new URLSearchParams(location.search);
     setSearchQuery(params.get("search") || "");
@@ -36,9 +36,14 @@ export default function Header() {
 
   return (
     <header className="header">
+      {/* Logo */}
       <div className="logo">
         <Link to="/">
-          <img src={`${process.env.PUBLIC_URL}/assets/logo.jpg`} alt="Logo" className="logo-img" />
+          <img
+            src={`${process.env.PUBLIC_URL}/assets/logo.jpg`}
+            alt="Logo"
+            className="logo-img"
+          />
         </Link>
       </div>
 
@@ -50,31 +55,34 @@ export default function Header() {
       {/* Desktop Navigation */}
       <nav className="nav-links desktop">
         <Link to="/">Home</Link>
+
         <div className="dropdown">
-          <span onClick={() => toggleDropdown("plants")}>
-            Plants <ChevronDown size={16} />
+          <span>
+            Plants <ChevronDown size={16} className="dropdown-icon" />
           </span>
-          <div className={`dropdown-content ${dropdownOpen["plants"] ? "show" : ""}`}>
+          <div className="dropdown-content">
             <Link to="/products/air">Air Purifying Plants</Link>
             <Link to="/products/aromatic">Aromatic Plants</Link>
             <Link to="/products/cactus">Cactus & Succulents</Link>
             <Link to="/products/flowering">Flowering Plants</Link>
           </div>
         </div>
+
         <div className="dropdown">
-          <span onClick={() => toggleDropdown("seeds")}>
-            Seeds <ChevronDown size={16} />
+          <span>
+            Seeds <ChevronDown size={16} className="dropdown-icon" />
           </span>
-          <div className={`dropdown-content ${dropdownOpen["seeds"] ? "show" : ""}`}>
+          <div className="dropdown-content">
             <Link to="/seeds/flower">Flower Seeds</Link>
             <Link to="/seeds/vegetable">Vegetable Seeds</Link>
           </div>
         </div>
+
         <div className="dropdown">
-          <span onClick={() => toggleDropdown("care")}>
-            Plant Care <ChevronDown size={16} />
+          <span>
+            Plant Care <ChevronDown size={16} className="dropdown-icon" />
           </span>
-          <div className={`dropdown-content ${dropdownOpen["care"] ? "show" : ""}`}>
+          <div className="dropdown-content">
             <Link to="/care/fertilizers">Fertilizers</Link>
             <Link to="/care/growth">Growth Promoters</Link>
             <Link to="/care/pest">Pest Control</Link>
@@ -82,43 +90,51 @@ export default function Header() {
         </div>
       </nav>
 
-      {/* Mobile Navigation */}
-      <nav className={`nav-links mobile ${menuOpen ? "open" : ""}`}>
-        <Link to="/" onClick={() => setMenuOpen(false)}>Home</Link>
+      {/* Mobile Navigation (collapsible) */}
+      {menuOpen && (
+        <nav className="nav-links mobile">
+          <Link to="/" onClick={() => setMenuOpen(false)}>Home</Link>
 
-        <div className="dropdown">
-          <span className="dropdown-title" onClick={() => toggleDropdown("plants")}>
-            Plants <ChevronDown size={16} />
-          </span>
-          <div className={`dropdown-content ${dropdownOpen["plants"] ? "show" : ""}`}>
-            <Link to="/products/air" onClick={() => setMenuOpen(false)}>Air Purifying Plants</Link>
-            <Link to="/products/aromatic" onClick={() => setMenuOpen(false)}>Aromatic Plants</Link>
-            <Link to="/products/cactus" onClick={() => setMenuOpen(false)}>Cactus & Succulents</Link>
-            <Link to="/products/flowering" onClick={() => setMenuOpen(false)}>Flowering Plants</Link>
+          <div className="dropdown">
+            <span onClick={() => toggleDropdown("plants")}>
+              Plants <ChevronDown size={16} />
+            </span>
+            {dropdownOpen["plants"] && (
+              <div className="dropdown-content">
+                <Link to="/products/air" onClick={() => setMenuOpen(false)}>Air Purifying Plants</Link>
+                <Link to="/products/aromatic" onClick={() => setMenuOpen(false)}>Aromatic Plants</Link>
+                <Link to="/products/cactus" onClick={() => setMenuOpen(false)}>Cactus & Succulents</Link>
+                <Link to="/products/flowering" onClick={() => setMenuOpen(false)}>Flowering Plants</Link>
+              </div>
+            )}
           </div>
-        </div>
 
-        <div className="dropdown">
-          <span className="dropdown-title" onClick={() => toggleDropdown("seeds")}>
-            Seeds <ChevronDown size={16} />
-          </span>
-          <div className={`dropdown-content ${dropdownOpen["seeds"] ? "show" : ""}`}>
-            <Link to="/seeds/flower" onClick={() => setMenuOpen(false)}>Flower Seeds</Link>
-            <Link to="/seeds/vegetable" onClick={() => setMenuOpen(false)}>Vegetable Seeds</Link>
+          <div className="dropdown">
+            <span onClick={() => toggleDropdown("seeds")}>
+              Seeds <ChevronDown size={16} />
+            </span>
+            {dropdownOpen["seeds"] && (
+              <div className="dropdown-content">
+                <Link to="/seeds/flower" onClick={() => setMenuOpen(false)}>Flower Seeds</Link>
+                <Link to="/seeds/vegetable" onClick={() => setMenuOpen(false)}>Vegetable Seeds</Link>
+              </div>
+            )}
           </div>
-        </div>
 
-        <div className="dropdown">
-          <span className="dropdown-title" onClick={() => toggleDropdown("care")}>
-            Plant Care <ChevronDown size={16} />
-          </span>
-          <div className={`dropdown-content ${dropdownOpen["care"] ? "show" : ""}`}>
-            <Link to="/care/fertilizers" onClick={() => setMenuOpen(false)}>Fertilizers</Link>
-            <Link to="/care/growth" onClick={() => setMenuOpen(false)}>Growth Promoters</Link>
-            <Link to="/care/pest" onClick={() => setMenuOpen(false)}>Pest Control</Link>
+          <div className="dropdown">
+            <span onClick={() => toggleDropdown("care")}>
+              Plant Care <ChevronDown size={16} />
+            </span>
+            {dropdownOpen["care"] && (
+              <div className="dropdown-content">
+                <Link to="/care/fertilizers" onClick={() => setMenuOpen(false)}>Fertilizers</Link>
+                <Link to="/care/growth" onClick={() => setMenuOpen(false)}>Growth Promoters</Link>
+                <Link to="/care/pest" onClick={() => setMenuOpen(false)}>Pest Control</Link>
+              </div>
+            )}
           </div>
-        </div>
-      </nav>
+        </nav>
+      )}
 
       {/* Live Search */}
       <div className="search-bar">
@@ -128,16 +144,22 @@ export default function Header() {
           value={searchQuery}
           onChange={handleSearchChange}
         />
-        <FiSearch />
+        <button>
+          <FiSearch />
+        </button>
       </div>
 
+      {/* Admin / Login */}
       <Link to="/login" className="admin-login-btn" title="Admin Login">
         <FiUser size={20} />
       </Link>
 
+      {/* Cart */}
       <button className="cart-button" onClick={toggleCart} aria-label="Open cart">
         <ShoppingCart size={24} />
-        {totalQuantity > 0 && <span className="cart-count">{totalQuantity}</span>}
+        {totalQuantity > 0 && (
+          <span className="cart-count">{totalQuantity}</span>
+        )}
       </button>
     </header>
   );

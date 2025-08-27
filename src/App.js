@@ -8,6 +8,7 @@ import AboutUs from "./components/AboutUs";
 import Services from "./components/Services";
 import Products from "./components/Products";
 import Login from "./components/Login";
+import Dashboard from "./components/Dashboard"; // Import the Dashboard component
 import CartDrawer from "./components/CartDrawer";
 import CheckoutPage from "./components/CheckoutPage";
 
@@ -23,6 +24,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Landing />} />
           <Route path="/login" element={<Login />} />
+          <Route path="/dashboard" element={<Dashboard />} /> {/* Add Dashboard route */}
           <Route path="/about" element={<AboutUs />} />
           <Route path="/services" element={<Services />} />
           <Route path="/products" element={<Products />} />
