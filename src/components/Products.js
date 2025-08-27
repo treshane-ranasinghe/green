@@ -1,20 +1,23 @@
 import React, { useEffect, useState, useContext } from "react";
+import { useLocation } from "react-router-dom";
 import { CartContext } from "../context/CartContext";
-import Footer from "./Footer"; // adjust path if Footer.js is in another folder
-
+import Footer from "./Footer";
 
 export default function Products() {
   const [products, setProducts] = useState([]);
   const [filtered, setFiltered] = useState([]);
   const [minPrice, setMinPrice] = useState(0);
   const [maxPrice, setMaxPrice] = useState(200);
+  const [searchQuery, setSearchQuery] = useState("");
   const { addToCart } = useContext(CartContext);
+  const location = useLocation();
 
+  // Load products
   useEffect(() => {
     const mockProducts = [
       { id: 1, name: "Ecofriendly Stylish Pot 4-Inch", price: 59.99, image: `${process.env.PUBLIC_URL}/assets/NA3.jpg` },
       { id: 2, name: "Sansevieria bacularis plant Sapling", price: 129.99, image: `${process.env.PUBLIC_URL}/assets/NA2.jpg` },
-      { id: 3, name: "Snake Plant Sapling", price: 199.99, image: `${process.env.PUBLIC_URL}/assets/NA1.jpg` },
+      { id: 3, name: "Snake Plant Sapling", price: 199.99, image: `${process.env.PUBLIC_URL}/assets/NA4.jpg` },
       { id: 4, name: "Ecofriendly Stylish Pot 4-Inch", price: 59.99, image: `${process.env.PUBLIC_URL}/assets/NA3.jpg` },
       { id: 5, name: "Sansevieria bacularis plant Sapling", price: 129.99, image: `${process.env.PUBLIC_URL}/assets/NA2.jpg` },
       { id: 6, name: "Snake Plant Sapling", price: 199.99, image: `${process.env.PUBLIC_URL}/assets/NA1.jpg` },
@@ -23,9 +26,30 @@ export default function Products() {
     setFiltered(mockProducts);
   }, []);
 
-  const handleFilter = () => {
+  // Update search query from URL
+  useEffect(() => {
+    const params = new URLSearchParams(location.search);
+    setSearchQuery(params.get("search")?.toLowerCase() || "");
+  }, [location.search]);
+
+  // Filter products whenever search query or price changes
+  useEffect(() => {
     const result = products.filter(
-      (p) => p.price >= minPrice && p.price <= maxPrice
+      (p) =>
+        p.price >= minPrice &&
+        p.price <= maxPrice &&
+        p.name.toLowerCase().includes(searchQuery)
+    );
+    setFiltered(result);
+  }, [products, minPrice, maxPrice, searchQuery]);
+
+  // Manual filter button
+  const handleFilterClick = () => {
+    const result = products.filter(
+      (p) =>
+        p.price >= minPrice &&
+        p.price <= maxPrice &&
+        p.name.toLowerCase().includes(searchQuery)
     );
     setFiltered(result);
   };
@@ -33,7 +57,6 @@ export default function Products() {
   return (
     <>
       <section className="products-section">
-        {/* ✅ Full-width Hero Section */}
         <div className="hero-section">
           <img
             src={`${process.env.PUBLIC_URL}/assets/aboutus.jpg`}
@@ -46,7 +69,6 @@ export default function Products() {
           </div>
         </div>
 
-        
         <div className="products-layout">
           {/* Filter Sidebar */}
           <div className="filter-sidebar">
@@ -74,8 +96,9 @@ export default function Products() {
               Price: ${minPrice.toFixed(2)} — ${maxPrice.toFixed(2)}
             </p>
 
-            <button className="filter-button" onClick={handleFilter}>
-              Filter
+            {/* Filter Button */}
+            <button className="filter-button" onClick={handleFilterClick}>
+              Apply Filter
             </button>
           </div>
 

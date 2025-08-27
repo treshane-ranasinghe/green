@@ -1,5 +1,5 @@
-import React, { useContext, useState } from "react";
-import { Link } from "react-router-dom";
+import React, { useContext, useState, useEffect } from "react";
+import { Link, useNavigate, useLocation } from "react-router-dom";
 import { ShoppingCart, ChevronDown } from "lucide-react";
 import { FiSearch, FiUser, FiMenu, FiX } from "react-icons/fi";
 import { CartContext } from "../context/CartContext";
@@ -11,10 +11,20 @@ export default function Header() {
   const [searchQuery, setSearchQuery] = useState("");
   const [menuOpen, setMenuOpen] = useState(false);
   const [dropdownOpen, setDropdownOpen] = useState({});
+  const navigate = useNavigate();
+  const location = useLocation();
 
-  const handleSearch = (e) => {
-    e.preventDefault();
-    console.log("Search for:", searchQuery);
+  // Update searchQuery from URL
+  useEffect(() => {
+    const params = new URLSearchParams(location.search);
+    setSearchQuery(params.get("search") || "");
+  }, [location.search]);
+
+  // Live search handler
+  const handleSearchChange = (e) => {
+    const value = e.target.value;
+    setSearchQuery(value);
+    navigate(`/products?search=${encodeURIComponent(value)}`);
   };
 
   const toggleDropdown = (name) => {
@@ -28,29 +38,23 @@ export default function Header() {
     <header className="header">
       <div className="logo">
         <Link to="/">
-          <img
-            src={`${process.env.PUBLIC_URL}/assets/logo.jpg`}
-            alt="Logo"
-            className="logo-img"
-          />
+          <img src={`${process.env.PUBLIC_URL}/assets/logo.jpg`} alt="Logo" className="logo-img" />
         </Link>
       </div>
 
-      {/* Hamburger */}
+      {/* Hamburger for mobile */}
       <div className="hamburger" onClick={() => setMenuOpen(!menuOpen)}>
         {menuOpen ? <FiX size={28} /> : <FiMenu size={28} />}
       </div>
 
-      {/* Desktop Nav */}
+      {/* Desktop Navigation */}
       <nav className="nav-links desktop">
+        <Link to="/">Home</Link>
         <div className="dropdown">
-          <Link to="/">Home</Link>
-        </div>
-        <div className="dropdown">
-          <Link to="/products">
+          <span onClick={() => toggleDropdown("plants")}>
             Plants <ChevronDown size={16} />
-          </Link>
-          <div className="dropdown-content">
+          </span>
+          <div className={`dropdown-content ${dropdownOpen["plants"] ? "show" : ""}`}>
             <Link to="/products/air">Air Purifying Plants</Link>
             <Link to="/products/aromatic">Aromatic Plants</Link>
             <Link to="/products/cactus">Cactus & Succulents</Link>
@@ -58,19 +62,19 @@ export default function Header() {
           </div>
         </div>
         <div className="dropdown">
-          <Link to="/seeds">
+          <span onClick={() => toggleDropdown("seeds")}>
             Seeds <ChevronDown size={16} />
-          </Link>
-          <div className="dropdown-content">
+          </span>
+          <div className={`dropdown-content ${dropdownOpen["seeds"] ? "show" : ""}`}>
             <Link to="/seeds/flower">Flower Seeds</Link>
             <Link to="/seeds/vegetable">Vegetable Seeds</Link>
           </div>
         </div>
         <div className="dropdown">
-          <Link to="/care">
+          <span onClick={() => toggleDropdown("care")}>
             Plant Care <ChevronDown size={16} />
-          </Link>
-          <div className="dropdown-content">
+          </span>
+          <div className={`dropdown-content ${dropdownOpen["care"] ? "show" : ""}`}>
             <Link to="/care/fertilizers">Fertilizers</Link>
             <Link to="/care/growth">Growth Promoters</Link>
             <Link to="/care/pest">Pest Control</Link>
@@ -78,19 +82,14 @@ export default function Header() {
         </div>
       </nav>
 
-      {/* Mobile Nav */}
+      {/* Mobile Navigation */}
       <nav className={`nav-links mobile ${menuOpen ? "open" : ""}`}>
-        <div className="dropdown">
-          <Link to="/" onClick={() => setMenuOpen(false)}>Home</Link>
-        </div>
+        <Link to="/" onClick={() => setMenuOpen(false)}>Home</Link>
 
         <div className="dropdown">
-          <div
-            className="dropdown-title"
-            onClick={() => toggleDropdown("plants")}
-          >
+          <span className="dropdown-title" onClick={() => toggleDropdown("plants")}>
             Plants <ChevronDown size={16} />
-          </div>
+          </span>
           <div className={`dropdown-content ${dropdownOpen["plants"] ? "show" : ""}`}>
             <Link to="/products/air" onClick={() => setMenuOpen(false)}>Air Purifying Plants</Link>
             <Link to="/products/aromatic" onClick={() => setMenuOpen(false)}>Aromatic Plants</Link>
@@ -100,12 +99,9 @@ export default function Header() {
         </div>
 
         <div className="dropdown">
-          <div
-            className="dropdown-title"
-            onClick={() => toggleDropdown("seeds")}
-          >
+          <span className="dropdown-title" onClick={() => toggleDropdown("seeds")}>
             Seeds <ChevronDown size={16} />
-          </div>
+          </span>
           <div className={`dropdown-content ${dropdownOpen["seeds"] ? "show" : ""}`}>
             <Link to="/seeds/flower" onClick={() => setMenuOpen(false)}>Flower Seeds</Link>
             <Link to="/seeds/vegetable" onClick={() => setMenuOpen(false)}>Vegetable Seeds</Link>
@@ -113,12 +109,9 @@ export default function Header() {
         </div>
 
         <div className="dropdown">
-          <div
-            className="dropdown-title"
-            onClick={() => toggleDropdown("care")}
-          >
+          <span className="dropdown-title" onClick={() => toggleDropdown("care")}>
             Plant Care <ChevronDown size={16} />
-          </div>
+          </span>
           <div className={`dropdown-content ${dropdownOpen["care"] ? "show" : ""}`}>
             <Link to="/care/fertilizers" onClick={() => setMenuOpen(false)}>Fertilizers</Link>
             <Link to="/care/growth" onClick={() => setMenuOpen(false)}>Growth Promoters</Link>
@@ -127,17 +120,16 @@ export default function Header() {
         </div>
       </nav>
 
-      <form className="search-bar" onSubmit={handleSearch}>
+      {/* Live Search */}
+      <div className="search-bar">
         <input
           type="text"
           placeholder="Search products..."
           value={searchQuery}
-          onChange={(e) => setSearchQuery(e.target.value)}
+          onChange={handleSearchChange}
         />
-        <button type="submit" aria-label="Search">
-          <FiSearch />
-        </button>
-      </form>
+        <FiSearch />
+      </div>
 
       <Link to="/login" className="admin-login-btn" title="Admin Login">
         <FiUser size={20} />

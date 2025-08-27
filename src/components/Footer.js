@@ -84,9 +84,7 @@ export default function Footer() {
 
           <h4 className="footerHeading">Payment Methods</h4>
           <div className="paymentIcons">
-            <img src={`${process.env.PUBLIC_URL}/assets/visa.png`} alt="Visa" />
-            <img src={`${process.env.PUBLIC_URL}/assets/mastercard.png`} alt="MasterCard" />
-            <img src={`${process.env.PUBLIC_URL}/assets/paypal.png`} alt="PayPal" />
+            
           </div>
         </div>
       </div>

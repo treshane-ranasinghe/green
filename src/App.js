@@ -11,7 +11,6 @@ import Login from "./components/Login";
 import CartDrawer from "./components/CartDrawer";
 import CheckoutPage from "./components/CheckoutPage";
 
-
 import "./App.css";
 
 function App() {
@@ -22,7 +21,6 @@ function App() {
         <Header />
         <CartDrawer />
         <Routes>
-          {/* Default path loads Landing component */}
           <Route path="/" element={<Landing />} />
           <Route path="/login" element={<Login />} />
           <Route path="/about" element={<AboutUs />} />
