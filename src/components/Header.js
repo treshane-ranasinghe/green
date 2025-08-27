@@ -4,6 +4,7 @@ import { ShoppingCart, ChevronDown } from "lucide-react";
 import { FiSearch, FiUser, FiMenu, FiX } from "react-icons/fi";
 import { CartContext } from "../context/CartContext";
 
+
 export default function Header() {
   const { cartItems, toggleCart } = useContext(CartContext);
   const totalQuantity = cartItems.reduce((sum, item) => sum + item.quantity, 0);
@@ -51,7 +52,7 @@ export default function Header() {
         </NavLink>
       </div>
 
-      {/* Hamburger */}
+      {/* Hamburger - Fixed positioning */}
       <div className="hamburger" onClick={() => setMenuOpen(!menuOpen)}>
         {menuOpen ? <FiX size={28} /> : <FiMenu size={28} />}
       </div>
@@ -104,7 +105,7 @@ export default function Header() {
         <NavLink to="/" onClick={closeMenu} className="nav-link">Home</NavLink>
 
         <div className="dropdown">
-          <span onClick={() => toggleDropdown("plants")}>Plants <ChevronDown size={16} /></span>
+          <span onClick={() => toggleDropdown("plants")} className="dropdown-toggle">Plants <ChevronDown size={16} /></span>
           {dropdownOpen["plants"] && (
             <div className="dropdown-content mobile-dropdown">
               <NavLink to="/products/air" onClick={closeMenu} className="nav-link">Air Purifying Plants</NavLink>
@@ -115,7 +116,7 @@ export default function Header() {
         </div>
 
         <div className="dropdown">
-          <span onClick={() => toggleDropdown("pots")}>Pots <ChevronDown size={16} /></span>
+          <span onClick={() => toggleDropdown("pots")} className="dropdown-toggle">Pots <ChevronDown size={16} /></span>
           {dropdownOpen["pots"] && (
             <div className="dropdown-content mobile-dropdown">
               <NavLink to="/pots/grc" onClick={closeMenu} className="nav-link">GRC Pots</NavLink>
@@ -126,7 +127,7 @@ export default function Header() {
         </div>
 
         <div className="dropdown">
-          <span onClick={() => toggleDropdown("maintenance")}>Plant Maintenance <ChevronDown size={16} /></span>
+          <span onClick={() => toggleDropdown("maintenance")} className="dropdown-toggle">Plant Maintenance <ChevronDown size={16} /></span>
           {dropdownOpen["maintenance"] && (
             <div className="dropdown-content mobile-dropdown">
               <NavLink to="/maintenance/fertilizers" onClick={closeMenu} className="nav-link">Fertilizers</NavLink>
