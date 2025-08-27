@@ -48,9 +48,9 @@ export default function Dashboard() {
   const navigate = useNavigate();
   const [activeTab, setActiveTab] = useState("statistics");
   const [products, setProducts] = useState([
-    { id: 1, name: "Organic Apples", price: 4.99, stock: 50, category: "Fruits" },
-    { id: 2, name: "Fresh Spinach", price: 3.49, stock: 30, category: "Vegetables" },
-    { id: 3, name: "Honey", price: 8.99, stock: 20, category: "Pantry" },
+    { id: 1, name: "Ecofriendly Stylish Pot 4-Inch", price: 4.99, stock: 50, category: "" },
+    { id: 2, name: "Sansevieria bacularis plant Sapling", price: 3.49, stock: 30, category: "" },
+    { id: 3, name: "nake Plant Sapling", price: 8.99, stock: 20, category: "" },
   ]);
   const [newProduct, setNewProduct] = useState({ name: "", price: "", stock: "", category: "" });
   const [editingProduct, setEditingProduct] = useState(null);

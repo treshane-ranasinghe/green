@@ -31,7 +31,7 @@ export default function Landing() {
               }}
             >
               <div className="hero-content">
-                <h1>Welcome to ShopifyX</h1>
+                <h1>Welcome to Green Home</h1>
                 <p>Explore our exclusive collection today.</p>
                 <a href="/products" className="btn-primary">
                   Shop Now
@@ -94,7 +94,7 @@ export default function Landing() {
         <div className="about-content-box">
           <h2>About Us</h2>
           <p>
-            At ShopifyX, we are passionate about bringing you top-quality
+            At Green Home, we are passionate about bringing you top-quality
             products at affordable prices. Our mission is to provide exceptional
             customer service and a seamless shopping experience. Whether you're
             looking for everyday essentials or unique finds, we've got you

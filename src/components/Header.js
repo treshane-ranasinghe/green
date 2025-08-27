@@ -64,30 +64,34 @@ export default function Header() {
             <Link to="/products/air">Air Purifying Plants</Link>
             <Link to="/products/aromatic">Aromatic Plants</Link>
             <Link to="/products/cactus">Cactus & Succulents</Link>
-            <Link to="/products/flowering">Flowering Plants</Link>
+            
           </div>
         </div>
 
         <div className="dropdown">
           <span>
-            Seeds <ChevronDown size={16} className="dropdown-icon" />
+            Pots <ChevronDown size={16} className="dropdown-icon" />
           </span>
           <div className="dropdown-content">
-            <Link to="/seeds/flower">Flower Seeds</Link>
-            <Link to="/seeds/vegetable">Vegetable Seeds</Link>
+            
+            <Link to="/seeds/vegetable">GRC pots</Link>
+            <Link to="/seeds/vegetable">fiber pots</Link>
+            <Link to="/seeds/flower">cement pots</Link>
           </div>
         </div>
 
         <div className="dropdown">
           <span>
-            Plant Care <ChevronDown size={16} className="dropdown-icon" />
+            Plant maintenance <ChevronDown size={16} className="dropdown-icon" />
           </span>
           <div className="dropdown-content">
-            <Link to="/care/fertilizers">Fertilizers</Link>
-            <Link to="/care/growth">Growth Promoters</Link>
-            <Link to="/care/pest">Pest Control</Link>
+            <Link to="/care/fertilizers">Gold</Link>
+            <Link to="/care/growth">Silver</Link>
+            <Link to="/care/pest">Diamond</Link>
           </div>
         </div>
+         <Link to="/">Gallery</Link>
+          <Link to="/">Gifting</Link>
       </nav>
 
       {/* Mobile Navigation (collapsible) */}

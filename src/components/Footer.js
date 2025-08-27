@@ -65,9 +65,9 @@ export default function Footer() {
           </form>
 
           <h4 className="footerHeading">Contact Us</h4>
-          <p className="fLink">WhatsApp: <a href="https://wa.me/8087087224">80870-87224</a></p>
-          <p className="fLink">Call: <a href="tel:+919129912991">+91-91299-12991</a></p>
-          <p className="fLink">Email: <a href="mailto:support@example.com">support@example.com</a></p>
+          <p className="fLink">WhatsApp: <a href="https://wa.me/8087087224">+968 9977 6650</a></p>
+          <p className="fLink">Call: <a href="tel:+919129912991">+968 9977 6650</a></p>
+          <p className="fLink">Email: <a href="mailto:support@example.com">fancyworld@live.com</a></p>
         </div>
 
         {/* Column 4: Social & Payments */}
@@ -91,7 +91,7 @@ export default function Footer() {
 
       {/* Bottom Bar */}
       <div className="footerBottom">
-        © {new Date().getFullYear()} ShopifyX. All rights reserved.
+        © {new Date().getFullYear()} Green Home. All rights reserved.
       </div>
     </footer>
   );
