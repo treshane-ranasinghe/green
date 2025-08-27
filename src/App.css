@@ -16,12 +16,14 @@ body {
 .header {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: space-between; /* keep logo left, hamburger right */
   padding: 10px 20px;
   position: relative;
   background: white;
   z-index: 1000;
+  flex-wrap: wrap; /* allows wrapping for small screens */
 }
+
 
 /* Logo */
 .logo-img {
@@ -33,6 +35,7 @@ body {
   display: flex;
   gap: 20px;
   align-items: center;
+  margin-right: 40px; /* this pushes hamburger out */
 }
 
 /* Dropdowns */
@@ -56,13 +59,29 @@ body {
   display: flex;
 }
 
-/* Hamburger Menu */
 .hamburger {
-  display: none;
+  display: none; /* hide by default on desktop */
   cursor: pointer;
   color: #228B22;
   z-index: 1100;
 }
+
+/* show on mobile */
+@media (max-width: 768px) {
+  .hamburger {
+    display: block;
+    position: relative; /* ensures it's inside viewport */
+  }
+
+  .nav-links.desktop {
+    display: none; /* hide desktop nav */
+  }
+
+  .nav-links.mobile {
+    display: none; /* hidden by default, shown when open */
+  }
+}
+
 
 /* Mobile menu */
 .nav-links {
@@ -96,7 +115,9 @@ body {
 /* Hide desktop nav on small screens */
 @media (max-width: 768px) {
   .nav-links {
-    display: none;
+    margin: 0; /* no extra margin */
+    flex-direction: column;
+    width: 100%;
   }
   .hamburger {
     display: block;
@@ -206,21 +227,7 @@ body {
   margin-left: 5px;
 }
 
-/* Header */
-.header {
-  background: white;
-  color: black;
-  padding: 0 20px;
-  height: 80px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  position: sticky;
-  top: 0;
-  z-index: 1000;
-  box-shadow: 0 2px 6px rgb(0 0 0 / 0.1);
-  transition: background-color 0.3s ease;
-}
+
 
 .logo {
   display: flex;
